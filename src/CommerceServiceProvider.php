@@ -25,5 +25,12 @@ class CommerceServiceProvider extends ServiceProvider
             ]);
 
         }
+
+        $this->loadRoutes();
+    }
+
+    private function loadRoutes()
+    {
+        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
     }
 }
