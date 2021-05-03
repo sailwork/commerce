@@ -6,7 +6,6 @@ use Illuminate\Console\Command;
 
 class UpdateCommand extends Command
 {
-
     public $signature = 'commerce:update';
 
     public $description = 'Update Package Command';

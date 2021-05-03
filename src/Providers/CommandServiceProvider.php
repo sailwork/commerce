@@ -10,9 +10,8 @@ class CommandServiceProvider extends ServiceProvider
     public function boot()
     {
         if ($this->app->runningInConsole()) {
-
             $this->commands([
-                UpdateCommand::class
+                UpdateCommand::class,
             ]);
         }
     }
