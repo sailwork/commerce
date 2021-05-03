@@ -4,11 +4,12 @@ namespace Sailwork\Commerce\Commands;
 
 use Illuminate\Console\Command;
 
-class CommerceCommand extends Command
+class UpdateCommand extends Command
 {
-    public $signature = 'commerce';
 
-    public $description = 'My command';
+    public $signature = 'commerce:update';
+
+    public $description = 'Update Package Command';
 
     public function handle()
     {

@@ -19,6 +19,7 @@
         "php": "^8.0",
         "illuminate/contracts": "^8.37",
         "laravel/jetstream": "^2.3",
+        "nuwave/lighthouse": "^5.8",
         "spatie/laravel-package-tools": "^1.4.3"
     },
     "require-dev": {
