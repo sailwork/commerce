@@ -13,5 +13,4 @@ interface ChannelContract
     public function update(Channel $channel) : Channel;
 
     public function delete(int $id) : bool;
-
 }
