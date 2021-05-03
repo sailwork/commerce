@@ -3,8 +3,8 @@
 namespace Sailwork\Commerce;
 
 use Illuminate\Support\ServiceProvider;
-use Sailwork\Commerce\Providers\CommandServiceProvider;
 use Sailwork\Commerce\Providers\AutomapServiceProvider;
+use Sailwork\Commerce\Providers\CommandServiceProvider;
 use Sailwork\Commerce\Providers\RouteServiceProvider;
 
 class CommerceServiceProvider extends ServiceProvider

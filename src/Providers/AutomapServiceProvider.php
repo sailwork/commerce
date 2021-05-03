@@ -17,7 +17,6 @@ class AutomapServiceProvider extends ServiceProvider
 //        $this->mapping();
     }
 
-
     private function mapping()
     {
         // read all folders to get the class with implement
@@ -25,20 +24,20 @@ class AutomapServiceProvider extends ServiceProvider
         $folders = collect([]);
 
         foreach ($dir as $fileinfo) {
-            if (!$fileinfo->isDot() && !$fileinfo->isFile()) {
+            if (! $fileinfo->isDot() && ! $fileinfo->isFile()) {
                 $folders->push($fileinfo->getFileName());
             }
         }
 
         // Remove system Folder
-        $excludedFolders = $folders->filter(function($item) {
-            return !in_array($item, ['Http', 'Commands', 'Contracts', 'Providers']);
+        $excludedFolders = $folders->filter(function ($item) {
+            return ! in_array($item, ['Http', 'Commands', 'Contracts', 'Providers']);
         });
 
-        $excludedFolders->each(function($folder) {
+        $excludedFolders->each(function ($folder) {
             $files = collect(scandir(__DIR__ . '/../' . $folder));
             $files->filter(function ($file) {
-                return !in_array($file, ['.', '..']);
+                return ! in_array($file, ['.', '..']);
             })->each(function ($file) use ($folder) {
                 $filePath = __DIR__ . '/../' . $folder . '/' . $file;
                 $fileContent = file_get_contents($filePath);
@@ -51,12 +50,12 @@ class AutomapServiceProvider extends ServiceProvider
                         })->toArray();
 
                         preg_match('/namespace (.*)/', $fileContent, $namespace);
-                        $namespace = Str::replaceLast(';','\\', trim($namespace[1]));
+                        $namespace = Str::replaceLast(';', '\\', trim($namespace[1]));
                         $conCreate = $namespace . $matchedItem[1];
 
                         $interface = $matchedItem[2];
 
-                        if (!Str::contains($interface, '\\')) {
+                        if (! Str::contains($interface, '\\')) {
                             preg_match('/use (.*)\\'.$interface.'/', $fileContent, $outInterface);
                             $interface = trim($outInterface[1]) . $interface;
                         }
