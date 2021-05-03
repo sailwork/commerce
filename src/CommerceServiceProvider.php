@@ -3,6 +3,7 @@
 namespace Sailwork\Commerce;
 
 use Illuminate\Support\ServiceProvider;
+use Sailwork\Commerce\Commands\CommerceCommand;
 
 class CommerceServiceProvider extends ServiceProvider
 {
@@ -18,6 +19,10 @@ class CommerceServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__.'/../config/commerce.php' => config_path('commerce.php'),
             ], 'config');
+
+            $this->commands([
+                CommerceCommand::class
+            ]);
 
         }
     }
