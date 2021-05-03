@@ -7,7 +7,7 @@ class CommerceController
     public function index()
     {
         return response()->json([
-            'message' => 'Hello From Controller'
+            'message' => 'Hello From Controller',
         ]);
     }
 }
