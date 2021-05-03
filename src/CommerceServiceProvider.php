@@ -14,11 +14,9 @@ class CommerceServiceProvider extends ServiceProvider
     public function boot()
     {
         if ($this->app->runningInConsole()) {
-
             $this->publishes([
                 __DIR__.'/../config/commerce.php' => config_path('commerce.php'),
             ], 'config');
-
         }
     }
 }
