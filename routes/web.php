@@ -12,3 +12,7 @@ Route::get('commerce-controller', [
     \Sailwork\Commerce\Http\Controllers\CommerceController::class,
     'index'
 ]);
+
+Route::get('container', function() {
+    dd(resolve(\Sailwork\Commerce\Contracts\Channel\ChannelContract::class));
+});

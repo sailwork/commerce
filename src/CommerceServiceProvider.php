@@ -4,6 +4,7 @@ namespace Sailwork\Commerce;
 
 use Illuminate\Support\ServiceProvider;
 use Sailwork\Commerce\Providers\CommandServiceProvider;
+use Sailwork\Commerce\Providers\AutomapServiceProvider;
 use Sailwork\Commerce\Providers\RouteServiceProvider;
 
 class CommerceServiceProvider extends ServiceProvider
@@ -14,6 +15,7 @@ class CommerceServiceProvider extends ServiceProvider
 
         $this->app->register(CommandServiceProvider::class);
         $this->app->register(RouteServiceProvider::class);
+        $this->app->register(AutomapServiceProvider::class);
     }
 
     public function boot()
