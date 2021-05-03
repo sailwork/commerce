@@ -6,7 +6,6 @@ use Sailwork\Commerce\Contracts\Channel\ChannelContract;
 
 class ChannelRepository implements ChannelContract
 {
-
     public function get(int $id): Channel
     {
         // TODO: Implement get() method.
