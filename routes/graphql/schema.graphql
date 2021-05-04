@@ -1,0 +1,10 @@
+type Category {
+    id: ID!
+    name: String!
+    slug: String!
+}
+
+
+type Query {
+    categories: [Category]! @paginate(type: "paginator" model: "\Sailwork\Commerce\Models\Catalog\Category")
+}
