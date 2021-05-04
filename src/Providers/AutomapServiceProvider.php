@@ -14,7 +14,7 @@ class AutomapServiceProvider extends ServiceProvider
 
     public function register()
     {
-//        $this->mapping();
+        //
     }
 
 

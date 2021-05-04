@@ -2,9 +2,9 @@
 
 namespace Sailwork\Commerce\Channel;
 
-use Sailwork\Commerce\Contracts\Channel\ChannelContract;
+use Sailwork\Commerce\Contracts\Channel\ChannelHandler;
 
-class ChannelRepository implements ChannelContract
+class ChannelRepository implements ChannelHandler
 {
     public function get(int $id): Channel
     {

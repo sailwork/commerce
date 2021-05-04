@@ -14,5 +14,5 @@ Route::get('commerce-controller', [
 ]);
 
 Route::get('container', function() {
-    dd(resolve(\Sailwork\Commerce\Contracts\Channel\ChannelContract::class));
+    dd(resolve(\Sailwork\Commerce\Contracts\Channel\ChannelHandler::class));
 });

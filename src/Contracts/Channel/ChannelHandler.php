@@ -4,7 +4,7 @@ namespace Sailwork\Commerce\Contracts\Channel;
 
 use Sailwork\Commerce\Channel\Channel;
 
-interface ChannelContract
+interface ChannelHandler
 {
     public function get(int $id) : Channel;
 
