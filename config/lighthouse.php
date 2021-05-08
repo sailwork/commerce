@@ -71,6 +71,7 @@ return [
 
     'schema' => [
         'register' => base_path('graphql/schema.graphql'),
+        'commerce' => base_path('graphql/commerce.graphql')
     ],
 
     /*
@@ -409,7 +410,7 @@ return [
         /*
          * Location of resolver classes when resolving the `_entities` field.
          */
-        'entities_resolver_namespace' => 'App\\GraphQL\\Entities',
+        'entities_resolver_namespace' => ['Sailwork\\Commerce\\GraphQL\\Entities', 'App\\GraphQL\\Entities'],
     ],
 
 ];
