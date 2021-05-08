@@ -6,7 +6,9 @@ use Illuminate\Support\ServiceProvider;
 use Sailwork\Commerce\Providers\CommandServiceProvider;
 use Sailwork\Commerce\Providers\DatabaseServiceProvider;
 use Sailwork\Commerce\Providers\GraphQLServiceProvider;
+use Sailwork\Commerce\Providers\LivewireServiceProvider;
 use Sailwork\Commerce\Providers\RouteServiceProvider;
+use Sailwork\Commerce\Providers\ViewServiceProvider;
 
 class CommerceServiceProvider extends ServiceProvider
 {
@@ -18,6 +20,8 @@ class CommerceServiceProvider extends ServiceProvider
         $this->app->register(RouteServiceProvider::class);
         $this->app->register(DatabaseServiceProvider::class);
         $this->app->register(GraphQLServiceProvider::class);
+        $this->app->register(ViewServiceProvider::class);
+        $this->app->register(LivewireServiceProvider::class);
     }
 
     public function boot()

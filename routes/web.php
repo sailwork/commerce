@@ -8,11 +8,7 @@ Route::get('commerce', function() {
     ]);
 });
 
-Route::get('commerce-controller', [
-    \Sailwork\Commerce\Http\Controllers\CommerceController::class,
-    'index'
+Route::get('admin/product-type', [
+   \Sailwork\Commerce\Http\Controllers\Catalog\ProductTypeController::class,
+   'index'
 ]);
-
-Route::get('container', function() {
-    dd(resolve(\Sailwork\Commerce\Contracts\Channel\ChannelHandler::class));
-});
