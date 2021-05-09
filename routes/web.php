@@ -2,17 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('commerce', function() {
-    return response()->json([
-        'message' => 'This is Sailwork Commerce'
-    ]);
-});
-
-Route::get('commerce-controller', [
+Route::get('commerce', [
     \Sailwork\Commerce\Http\Controllers\CommerceController::class,
     'index'
 ]);
 
-Route::get('container', function() {
-    dd(resolve(\Sailwork\Commerce\Contracts\Channel\ChannelHandler::class));
-});
+Route::get('admin/product-type', [
+   \Sailwork\Commerce\Http\Controllers\Catalog\ProductTypeController::class,
+   'index'
+])->middleware(['auth:sanctum', 'verified']);
