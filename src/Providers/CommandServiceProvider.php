@@ -3,7 +3,7 @@
 namespace Sailwork\Commerce\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Sailwork\Commerce\Commands\UpdateCommand;
+use Sailwork\Commerce\Commands\InstallCommand;
 
 class CommandServiceProvider extends ServiceProvider
 {
@@ -11,7 +11,7 @@ class CommandServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
-                UpdateCommand::class,
+                InstallCommand::class,
             ]);
         }
     }
