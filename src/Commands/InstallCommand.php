@@ -3,9 +3,8 @@
 namespace Sailwork\Commerce\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Contracts\Config\Repository as ConfigRepository;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Artisan;
 
 class InstallCommand extends Command
 {

@@ -4,11 +4,11 @@
 namespace Sailwork\Commerce\GraphQL\Category\Queries;
 
 use Closure;
+use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Facades\GraphQL;
 use Rebing\GraphQL\Support\Query;
-use GraphQL\Type\Definition\ResolveInfo;
-use Sailwork\Commerce\Category\Category;
+use Sailwork\Commerce\Category\Actions\GetCategory;
 
 class CategoryQuery extends Query
 {
@@ -27,13 +27,13 @@ class CategoryQuery extends Query
             'id' => [
                 'name' => 'id',
                 'type' => Type::int(),
-                'rules' => ['required']
+                'rules' => ['required'],
             ],
         ];
     }
 
     public function resolve($root, $args, $context, ResolveInfo $resolveInfo, Closure $getSelectFields)
     {
-        return Category::findOrFail($args['id']);
+        return GetCategory::run($args['id']);
     }
 }

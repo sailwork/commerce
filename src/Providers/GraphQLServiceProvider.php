@@ -14,4 +14,3 @@ class GraphQLServiceProvider extends ServiceProvider
         }
     }
 }
-

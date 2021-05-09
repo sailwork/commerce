@@ -3,17 +3,16 @@
 namespace Sailwork\Commerce\GraphQL\Category\Queries;
 
 use Closure;
+use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Facades\GraphQL;
 use Rebing\GraphQL\Support\Query;
-use GraphQL\Type\Definition\ResolveInfo;
-use Sailwork\Commerce\Category\Category;
+use Sailwork\Commerce\Category\Actions\GetCategory;
 
 class CategoriesQuery extends Query
 {
-
     protected $attributes = [
-        'name' => 'categories'
+        'name' => 'categories',
     ];
 
     public function type(): Type
@@ -27,13 +26,13 @@ class CategoriesQuery extends Query
             'page' => [
                 'name' => 'page',
                 'type' => Type::int(),
-                'rules' => ['required']
+                'rules' => ['required'],
             ],
             'limit' => [
                 'name' => 'limit',
                 'type' => Type::int(),
-                'rules' => ['required']
-            ]
+                'rules' => ['required'],
+            ],
         ];
     }
 
@@ -41,8 +40,6 @@ class CategoriesQuery extends Query
     {
         $fields = $getSelectFields();
 
-        return Category::select($fields->getSelect())
-                        ->paginate($args['limit'], ['*'], 'page', $args['page']);
-
+        return GetCategory::run($fields->getSelect(), $args['limit'], $args['page']);
     }
 }
