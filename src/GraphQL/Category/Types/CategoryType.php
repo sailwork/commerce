@@ -5,6 +5,7 @@ namespace Sailwork\Commerce\GraphQL\Category\Types;
 
 use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Type as GraphQLType;
+use Sailwork\Commerce\Category\Category;
 
 class CategoryType extends GraphQLType
 {
@@ -13,7 +14,7 @@ class CategoryType extends GraphQLType
         'slug'          => 'Slug of Category',
         'description'   => 'Description',
         'is_active'     => 'Active or Disable',
-        'model'         => CategoryType::class
+        'model'         => Category::class
     ];
 
     public function fields(): array

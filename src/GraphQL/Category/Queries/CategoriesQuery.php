@@ -43,6 +43,5 @@ class CategoriesQuery extends Query
 
         return Category::select($fields->getSelect())
                         ->paginate($args['limit'], ['*'], 'page', $args['page']);
-
     }
 }

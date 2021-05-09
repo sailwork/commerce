@@ -1,10 +1,14 @@
 # Packages
 
 * [Laravel Graphql](https://github.com/rebing/graphql-laravel)
-* [Laravel Action](https://laravelactions.com/): Action
-* [Laravel Venture](https://laravel-venture.netlify.app/): Work flow pattern
+* [Laravel Action](https://laravelactions.com/)
 
-# Migration
+# Documents
 
-* [Document](https://laravelpackage.com/08-models-and-migrations.html#migrations)
+* [Laravel Package Development](https://laravelpackage.com/)
+  
+# Developer Note
 * Migration must have timestamps in name
+```js
+    2021_05_04_commerce_create_catalog_categories_table.php
+```
