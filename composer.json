@@ -17,7 +17,6 @@
     ],
     "require": {
         "php": "^8.0",
-        "livewire/livewire": "^2.4",
         "lorisleiva/laravel-actions": "^2.1",
         "rebing/graphql-laravel": "^7.2"
     },
