@@ -4,11 +4,11 @@ namespace Sailwork\Commerce\GraphQL\Category\Queries;
 
 use Closure;
 use GraphQL\Type\Definition\Type;
+use JetBrains\PhpStorm\ArrayShape;
 use Rebing\GraphQL\Support\Facades\GraphQL;
 use Rebing\GraphQL\Support\Query;
 use GraphQL\Type\Definition\ResolveInfo;
 use Sailwork\Commerce\Category\Actions\GetCategory;
-use Sailwork\Commerce\Category\Category;
 
 class CategoriesQuery extends Query
 {
@@ -22,6 +22,7 @@ class CategoriesQuery extends Query
         return GraphQL::paginate('Category');
     }
 
+    #[ArrayShape(['page' => "array", 'limit' => "array"])]
     public function args(): array
     {
         return  [
