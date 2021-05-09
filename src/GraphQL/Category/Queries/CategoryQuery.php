@@ -8,6 +8,7 @@ use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Facades\GraphQL;
 use Rebing\GraphQL\Support\Query;
 use GraphQL\Type\Definition\ResolveInfo;
+use Sailwork\Commerce\Category\Actions\GetCategory;
 use Sailwork\Commerce\Category\Category;
 
 class CategoryQuery extends Query
@@ -34,6 +35,6 @@ class CategoryQuery extends Query
 
     public function resolve($root, $args, $context, ResolveInfo $resolveInfo, Closure $getSelectFields)
     {
-        return Category::findOrFail($args['id']);
+        return GetCategory::run($args['id']);
     }
 }

@@ -7,6 +7,7 @@ use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Facades\GraphQL;
 use Rebing\GraphQL\Support\Query;
 use GraphQL\Type\Definition\ResolveInfo;
+use Sailwork\Commerce\Category\Actions\GetCategory;
 use Sailwork\Commerce\Category\Category;
 
 class CategoriesQuery extends Query
@@ -41,7 +42,6 @@ class CategoriesQuery extends Query
     {
         $fields = $getSelectFields();
 
-        return Category::select($fields->getSelect())
-                        ->paginate($args['limit'], ['*'], 'page', $args['page']);
+        return GetCategory::run($fields->getSelect(), $args['limit'], $args['page']);
     }
 }
