@@ -28,20 +28,6 @@ You can publish the config file with:
 php artisan vendor:publish --provider="Sailwork\Commerce\CommerceServiceProvider" --tag="commerce-config"
 ```
 
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
-## Usage
-
-```php
-$commerce = new Sailwork\Commerce();
-echo $commerce->echoPhrase('Hello, Spatie!');
-```
-
 ## Testing
 
 ```bash
