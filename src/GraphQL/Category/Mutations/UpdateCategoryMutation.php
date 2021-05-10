@@ -4,15 +4,15 @@ namespace Sailwork\Commerce\GraphQL\Category\Mutations;
 
 use Closure;
 use GraphQL;
-use GraphQL\Type\Definition\Type;
 use GraphQL\Type\Definition\ResolveInfo;
+use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Mutation;
 use Sailwork\Commerce\Category\Category;
 
 class UpdateCategoryMutation extends Mutation
 {
     protected $attributes = [
-        'name' => 'updateCategory'
+        'name' => 'updateCategory',
     ];
 
     public function type(): Type
@@ -42,14 +42,14 @@ class UpdateCategoryMutation extends Mutation
             'is_active' => [
                 'name' => 'slug',
                 'type' => Type::nonNull(Type::boolean()),
-            ]
+            ],
         ];
     }
 
     public function resolve($root, $args, $context, ResolveInfo $resolveInfo, Closure $getSelectFields)
     {
         $category = Category::findOrFail($args['id']);
-        if(!$category) {
+        if (! $category) {
             return null;
         }
 
