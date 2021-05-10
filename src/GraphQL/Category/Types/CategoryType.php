@@ -10,11 +10,11 @@ use Sailwork\Commerce\Category\Category;
 class CategoryType extends GraphQLType
 {
     protected $attributes = [
-        'name'          => 'Category',
-        'slug'          => 'Slug of Category',
-        'description'   => 'Description',
-        'is_active'     => 'Active or Disable',
-        'model'         => Category::class
+        'name' => 'Category',
+        'slug' => 'Slug of Category',
+        'description' => 'Description',
+        'is_active' => 'Active or Disable',
+        'model' => Category::class,
     ];
 
     public function fields(): array
@@ -39,7 +39,7 @@ class CategoryType extends GraphQLType
             'is_active' => [
                 'type' => Type::nonNull(Type::boolean()),
                 'description' => 'The status of the category',
-            ]
+            ],
         ];
     }
 }
