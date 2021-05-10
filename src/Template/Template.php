@@ -1,15 +1,14 @@
 <?php
 
-
-namespace Sailwork\Commerce\Category;
+namespace Sailwork\Commerce\Template;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Template extends Model
 {
-    protected $table = 'categories';
-
     protected $guarded = [];
+
+    protected $table = 'templates';
 
     protected $fillable = ['name', 'slug', 'description', 'is_active'];
 
