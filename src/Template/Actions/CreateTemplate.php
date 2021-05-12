@@ -13,6 +13,7 @@ class CreateTemplate
     {
         $template->fill($data);
         $template->save();
+
         return $template;
     }
 }

@@ -3,7 +3,6 @@
 
 namespace Sailwork\Commerce\Category\Actions;
 
-
 use Lorisleiva\Actions\Concerns\AsAction;
 use Sailwork\Commerce\Category\Category;
 
@@ -15,6 +14,7 @@ class CreateCategory
     {
         $category->fill($data);
         $category->save();
+
         return $category->refresh();
     }
 }
