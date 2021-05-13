@@ -33,7 +33,7 @@ class CategoryType extends GraphQLType
                 'description' => 'The slug of the category',
             ],
             'description' => [
-                'type' => Type::nonNull(Type::string()),
+                'type' => Type::string(),
                 'description' => 'The description of the category',
             ],
             'is_active' => [

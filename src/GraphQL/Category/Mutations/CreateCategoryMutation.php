@@ -8,12 +8,12 @@ use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Mutation;
 use Sailwork\Commerce\Category\Category;
-use Sailwork\Commerce\Category\Actions\UpdateCategory;
+use Sailwork\Commerce\Category\Actions\CreateCategory;
 
-class UpdateCategoryMutation extends Mutation
+class CreateCategoryMutation extends Mutation
 {
     protected $attributes = [
-        'name' => 'updateCategory',
+        'name' => 'createCategory',
     ];
 
     public function type(): Type
@@ -24,10 +24,6 @@ class UpdateCategoryMutation extends Mutation
     public function args(): array
     {
         return [
-            'id' => ['
-                name' => 'id',
-                'type' => Type::nonNull(Type::int()),
-            ],
             'name' => [
                 'name' => 'name',
                 'type' => Type::nonNull(Type::string()),
@@ -49,6 +45,6 @@ class UpdateCategoryMutation extends Mutation
 
     public function resolve($root, $args, $context, ResolveInfo $resolveInfo, Closure $getSelectFields)
     {
-        return UpdateCategory::run($args['id'], $args);
+        return CreateCategory::run($args);
     }
 }
