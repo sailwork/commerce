@@ -19,6 +19,7 @@ class UpdateCategory
     public function handle(int $id, $attributes)
     {
         $category = $this->category->findOrFail($id);
+
         return $category->update($attributes);
     }
 }

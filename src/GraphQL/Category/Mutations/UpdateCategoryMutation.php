@@ -7,7 +7,6 @@ use GraphQL;
 use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Mutation;
-use Sailwork\Commerce\Category\Category;
 use Sailwork\Commerce\Category\Actions\UpdateCategory;
 
 class UpdateCategoryMutation extends Mutation
